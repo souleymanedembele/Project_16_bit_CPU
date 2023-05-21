@@ -1,0 +1,22 @@
+do runregFile16x16.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 10:10:13 on May 21,2023
+# vlog -reportprogress 300 ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 10:10:13 on May 21,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work regFile16x16_tb 
+# Start time: 10:10:13 on May 21,2023
+# Loading sv_std.std
+# Loading work.regFile16x16_tb
+# Loading work.regFile16x16
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: $stop    : ./regFile16x16.sv(86)
+#    Time: 60 ps  Iteration: 0  Instance: /regFile16x16_tb
+# Break in Module regFile16x16_tb at ./regFile16x16.sv line 86
