@@ -1,455 +1,646 @@
-do runrtlDataMemory.do
-# 
-# Get rid of current work lib
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# 
-# Create work library and map it to 'work'
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Copying /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
-# Modifying modelsim.ini
-# 
-# Compile Verilog
-#     All Verilog files that are part of this design should have
-#     their own "vlog" line below.
-# vlog -work work +acc "./testDataMemory.sv"
+# Reading pref.tcl
+# OpenFile {C:/Users/jotka/OneDrive/Desktop/Cpu project/Mux2to1.sv}
+do runlab2.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:05:28 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./testDataMemory.sv 
-# -- Compiling module testDataMemory
+# Start time: 19:43:26 on May 22,2023
+# vlog -reportprogress 300 ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
 # 
 # Top level modules:
-# 	testDataMemory
-# End time: 12:05:28 on May 21,2023, Elapsed time: 0:00:00
+# 	Mux2to1_tb
+# End time: 19:43:26 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -work work +acc "./DataMemory.v"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:05:28 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
-# -- Compiling module DataMemory
-# 
-# Top level modules:
-# 	DataMemory
-# End time: 12:05:29 on May 21,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# 
-# Call vsim to invoke simulator
-#     Make sure the last item on the line is the name of the
-#     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  XXX_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug XXX_tb 
-# Start time: 12:05:29 on May 21,2023
-# ** Error: (vsim-3170) Could not find 'XXX_tb'.
-#         Searched libraries:
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/220model
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/sgate
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_mf
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_lnsim
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cycloneive
-#             /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work
-#             /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./runrtlDataMemory.do PAUSED at line 22
-do runrtlDataMemory.do
-# turn on verbage
-# transcript on
-# 
-# Get rid of current work lib
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# 
-# Create work library and map it to 'work'
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# Compile Verilog
-#     All Verilog files that are part of this design should have
-#     their own "vlog" line below.
-# vlog -work work +acc "./testDataMemory.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:05:53 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./testDataMemory.sv 
-# -- Compiling module testDataMemory
-# 
-# Top level modules:
-# 	testDataMemory
-# End time: 12:05:53 on May 21,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./DataMemory.v"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:05:53 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
-# -- Compiling module DataMemory
-# 
-# Top level modules:
-# 	DataMemory
-# End time: 12:05:53 on May 21,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# Call vsim to invoke simulator
-#     Make sure the last item on the line is the name of the
-#     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  XXX_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug XXX_tb 
-# Start time: 12:05:29 on May 21,2023
-# ** Error: (vsim-3170) Could not find 'XXX_tb'.
-#         Searched libraries:
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/220model
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/sgate
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_mf
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/altera_lnsim
-#             /home/souleymane/intelFPGA_lite/20.1/modelsim_ase/altera/verilog/cycloneive
-#             /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work
-#             /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./runrtlDataMemory.do PAUSED at line 22
-do runrtlDataMemory.do
-# turn on verbage
-# transcript on
-# 
-# Get rid of current work lib
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# 
-# Create work library and map it to 'work'
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# Compile Verilog
-#     All Verilog files that are part of this design should have
-#     their own "vlog" line below.
-# vlog -work work +acc "./testDataMemory.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:06:15 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./testDataMemory.sv 
-# -- Compiling module testDataMemory
-# 
-# Top level modules:
-# 	testDataMemory
-# End time: 12:06:15 on May 21,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./DataMemory.v"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:06:15 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
-# -- Compiling module DataMemory
-# 
-# Top level modules:
-# 	DataMemory
-# End time: 12:06:15 on May 21,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# Call vsim to invoke simulator
-#     Make sure the last item on the line is the name of the
-#     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  testDataMemory
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug testDataMemory 
-# Start time: 12:05:29 on May 21,2023
+# vsim -voptargs=""+acc"" -t 1ps -lib work Mux2to1_tb 
+# Start time: 19:43:26 on May 22,2023
 # Loading sv_std.std
-# Loading work.testDataMemory
-# Loading work.DataMemory
-# Loading altera_mf_ver.altsyncram
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'address'. The port definition is at: ./DataMemory.v(41).
-#    Time: 0 ps  Iteration: 0  Instance: /testDataMemory/test1 File: ./testDataMemory.sv Line: 18
-# 
-# Source the wave do file
-#     This should be the file that sets up the signal window for
-#     the module you are testing.
-# do waveDataMemory.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /testDataMemory/Clk
-# add wave -noupdate /testDataMemory/Addr
-# add wave -noupdate /testDataMemory/wrEn
-# add wave -noupdate /testDataMemory/wrData
-# add wave -noupdate /testDataMemory/Q
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-# quietly wave cursor active 0            
-# configure wave -namecolwidth 150        
-# configure wave -valuecolwidth 100       
-# configure wave -justifyvalue left       
-# configure wave -signalnamewidth 0       
-# configure wave -snapdistance 10         
-# configure wave -datasetprefix 0         
-# configure wave -rowmargin 4             
-# configure wave -childrowmargin 2        
-# configure wave -gridoffset 0            
-# configure wave -gridperiod 1            
-# configure wave -griddelta 40            
-# configure wave -timeline 0              
-# configure wave -timelineunits ps        
-# update                                  
-# WaveRestoreZoom {0 ps} {1 ns}          
-# 
-# Set the window types
-# view wave
+# Loading work.Mux2to1_tb
+# Loading work.Mux2to1
 # .main_pane.wave.interior.cs.body.pw.wf
-# view structure
 # .main_pane.structure.interior.cs.body.struct
-# view signals
 # .main_pane.objects.interior.cs.body.tree
-# 
-# Run the simulation
-# run -all
-# Addr =    76, wrData = 0064, wrEn = 1, Q = xxxx
-# Addr =    76, wrData = 0064, wrEn = 1, Q = 0000
-# Addr =    76, wrData = 0064, wrEn = 1, Q = 0064
-# ** Note: $stop    : ./testDataMemory.sv(43)
-#    Time: 118 ns  Iteration: 0  Instance: /testDataMemory
-# Break in Module testDataMemory at ./testDataMemory.sv line 43
-# 
-# View the entire wave display
-# wave zoomfull
-# 0 ps
-# 123900 ps
-# 
-# End
-do runrtlDataMemory.do
-# turn on verbage
-# transcript on
-# 
-# Get rid of current work lib
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
-# 
-# Create work library and map it to 'work'
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# Compile Verilog
-#     All Verilog files that are part of this design should have
-#     their own "vlog" line below.
-# vlog -work work +acc "./testDataMemory.sv"
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000000  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000001  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000010  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000011  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000100  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000101  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000110  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000111  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001000  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001001  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001010  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001011  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001100  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001101  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001110  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+quit -sim
+# End time: 19:45:59 on May 22,2023, Elapsed time: 0:02:33
+# Errors: 0, Warnings: 0
+do runlab2.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:07:46 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./testDataMemory.sv 
-# -- Compiling module testDataMemory
+# Start time: 19:46:10 on May 22,2023
+# vlog -reportprogress 300 ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
 # 
 # Top level modules:
-# 	testDataMemory
-# End time: 12:07:46 on May 21,2023, Elapsed time: 0:00:00
+# 	Mux2to1_tb
+# End time: 19:46:10 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -work work +acc "./DataMemory.v"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:07:46 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
-# -- Compiling module DataMemory
-# 
-# Top level modules:
-# 	DataMemory
-# End time: 12:07:46 on May 21,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# Call vsim to invoke simulator
-#     Make sure the last item on the line is the name of the
-#     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  testDataMemory
-# End time: 12:07:50 on May 21,2023, Elapsed time: 0:02:21
-# Errors: 2, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug testDataMemory 
-# Start time: 12:07:50 on May 21,2023
+# vsim -voptargs=""+acc"" -t 1ps -lib work Mux2to1_tb 
+# Start time: 19:46:10 on May 22,2023
 # Loading sv_std.std
-# Loading work.testDataMemory
-# Loading work.DataMemory
-# Loading altera_mf_ver.altsyncram
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'address'. The port definition is at: ./DataMemory.v(41).
-#    Time: 0 ps  Iteration: 0  Instance: /testDataMemory/test1 File: ./testDataMemory.sv Line: 18
-# 
-# Source the wave do file
-#     This should be the file that sets up the signal window for
-#     the module you are testing.
-# do waveDataMemory.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /testDataMemory/Clk
-# add wave -noupdate /testDataMemory/Addr
-# add wave -noupdate /testDataMemory/wrEn
-# add wave -noupdate /testDataMemory/wrData
-# add wave -noupdate /testDataMemory/Q
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-# quietly wave cursor active 0            
-# configure wave -namecolwidth 150        
-# configure wave -valuecolwidth 100       
-# configure wave -justifyvalue left       
-# configure wave -signalnamewidth 0       
-# configure wave -snapdistance 10         
-# configure wave -datasetprefix 0         
-# configure wave -rowmargin 4             
-# configure wave -childrowmargin 2        
-# configure wave -gridoffset 0            
-# configure wave -gridperiod 1            
-# configure wave -griddelta 40            
-# configure wave -timeline 0              
-# configure wave -timelineunits ps        
-# update                                  
-# WaveRestoreZoom {0 ps} {1 ns}          
-# 
-# Set the window types
-# view wave
+# Loading work.Mux2to1_tb
+# Loading work.Mux2to1
 # .main_pane.wave.interior.cs.body.pw.wf
-# view structure
 # .main_pane.structure.interior.cs.body.struct
-# view signals
 # .main_pane.objects.interior.cs.body.tree
-# 
-# Run the simulation
-# run -all
-# Addr =    76, wrData = 000a, wrEn = 1, Q = xxxx
-# Addr =    76, wrData = 000a, wrEn = 1, Q = 0000
-# Addr =    76, wrData = 000a, wrEn = 1, Q = 000a
-# ** Note: $stop    : ./testDataMemory.sv(43)
-#    Time: 118 ns  Iteration: 0  Instance: /testDataMemory
-# Break in Module testDataMemory at ./testDataMemory.sv line 43
-# 
-# View the entire wave display
-# wave zoomfull
-# 0 ps
-# 123900 ps
-# 
-# End
-do runrtlDataMemory.do
-# turn on verbage
-# transcript on
-# 
-# Get rid of current work lib
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
-# 
-# Create work library and map it to 'work'
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# Compile Verilog
-#     All Verilog files that are part of this design should have
-#     their own "vlog" line below.
-# vlog -work work +acc "./testDataMemory.sv"
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000000  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000001  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000010  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000011  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000100  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000101  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000110  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000111  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001000  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001001  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001010  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001011  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001100  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001101  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001110  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+do runlab2.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:13:23 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./testDataMemory.sv 
-# -- Compiling module testDataMemory
+# Start time: 19:49:19 on May 22,2023
+# vlog -reportprogress 300 ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
 # 
 # Top level modules:
-# 	testDataMemory
-# End time: 12:13:23 on May 21,2023, Elapsed time: 0:00:00
+# 	Mux2to1_tb
+# End time: 19:49:19 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -work work +acc "./DataMemory.v"
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:13:23 on May 21,2023
-# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
-# -- Compiling module DataMemory
-# 
-# Top level modules:
-# 	DataMemory
-# End time: 12:13:23 on May 21,2023, Elapsed time: 0:00:00
+# End time: 19:49:19 on May 22,2023, Elapsed time: 0:03:09
 # Errors: 0, Warnings: 0
-# 
-# Call vsim to invoke simulator
-#     Make sure the last item on the line is the name of the
-#     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  testDataMemory
-# End time: 12:13:25 on May 21,2023, Elapsed time: 0:05:35
-# Errors: 0, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug testDataMemory 
-# Start time: 12:13:25 on May 21,2023
+# vsim -voptargs=""+acc"" -t 1ps -lib work Mux2to1_tb 
+# Start time: 19:49:20 on May 22,2023
 # Loading sv_std.std
-# Loading work.testDataMemory
-# Loading work.DataMemory
-# Loading altera_mf_ver.altsyncram
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'address'. The port definition is at: ./DataMemory.v(41).
-#    Time: 0 ps  Iteration: 0  Instance: /testDataMemory/test1 File: ./testDataMemory.sv Line: 18
-# 
-# Source the wave do file
-#     This should be the file that sets up the signal window for
-#     the module you are testing.
-# do waveDataMemory.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /testDataMemory/Clk
-# add wave -noupdate /testDataMemory/Addr
-# add wave -noupdate /testDataMemory/wrEn
-# add wave -noupdate /testDataMemory/wrData
-# add wave -noupdate /testDataMemory/Q
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-# quietly wave cursor active 0            
-# configure wave -namecolwidth 150        
-# configure wave -valuecolwidth 100       
-# configure wave -justifyvalue left       
-# configure wave -signalnamewidth 0       
-# configure wave -snapdistance 10         
-# configure wave -datasetprefix 0         
-# configure wave -rowmargin 4             
-# configure wave -childrowmargin 2        
-# configure wave -gridoffset 0            
-# configure wave -gridperiod 1            
-# configure wave -griddelta 40            
-# configure wave -timeline 0              
-# configure wave -timelineunits ps        
-# update                                  
-# WaveRestoreZoom {0 ps} {1 ns}          
-# 
-# Set the window types
-# view wave
+# Loading work.Mux2to1_tb
+# Loading work.Mux2to1
 # .main_pane.wave.interior.cs.body.pw.wf
-# view structure
 # .main_pane.structure.interior.cs.body.struct
-# view signals
 # .main_pane.objects.interior.cs.body.tree
-# 
-# Run the simulation
-# run -all
-# Addr =    76, wrData = 000a, wrEn = 1, Q = xxxx
-# Addr =    76, wrData = 000a, wrEn = 1, Q = 0000
-# Addr =    76, wrData = 000b, wrEn = 1, Q = 0000
-# Addr =    76, wrData = 000b, wrEn = 1, Q = 000a
-# ** Note: $stop    : ./testDataMemory.sv(45)
-#    Time: 118 ns  Iteration: 0  Instance: /testDataMemory
-# Break in Module testDataMemory at ./testDataMemory.sv line 45
-# 
-# View the entire wave display
-# wave zoomfull
-# 0 ps
-# 123900 ps
-# 
-# End
-# End time: 12:50:56 on May 21,2023, Elapsed time: 0:37:31
-# Errors: 0, Warnings: 1
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000001  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000010  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000011  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000100  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000101  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000110  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000000111  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001000  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001001  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001010  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001011  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001100  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001101  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001110  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     0  RFSelect = 00  ReadData = 0000000000001111  WriteData =     0
+# ALUQ =     0  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000000  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000010  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000011  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000100  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000101  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000110  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000000111  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001000  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001001  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001010  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001011  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001100  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001101  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001110  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     1  RFSelect = 00  ReadData = 0000000000001111  WriteData =     1
+# ALUQ =     1  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000000  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000001  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000011  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000100  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000101  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000110  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000000111  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001000  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001001  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001010  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001011  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001100  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001101  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001110  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     2  RFSelect = 00  ReadData = 0000000000001111  WriteData =     2
+# ALUQ =     2  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000000  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000001  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000010  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000100  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000101  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000110  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000000111  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001000  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001001  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001010  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001011  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001100  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001101  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001110  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     3  RFSelect = 00  ReadData = 0000000000001111  WriteData =     3
+# ALUQ =     3  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000000  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000001  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000010  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000011  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000101  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000110  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000000111  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001000  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001001  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001010  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001011  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001100  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001101  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001110  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     4  RFSelect = 00  ReadData = 0000000000001111  WriteData =     4
+# ALUQ =     4  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000000  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000001  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000010  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000011  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000100  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000110  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000000111  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001000  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001001  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001010  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001011  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001100  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001101  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001110  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     5  RFSelect = 00  ReadData = 0000000000001111  WriteData =     5
+# ALUQ =     5  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000000  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000001  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000010  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000011  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000100  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000101  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000000111  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001000  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001001  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001010  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001011  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001100  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001101  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001110  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     6  RFSelect = 00  ReadData = 0000000000001111  WriteData =     6
+# ALUQ =     6  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000000  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000001  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000010  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000011  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000100  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000101  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000110  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001000  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001001  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001010  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001011  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001100  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001101  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001110  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     7  RFSelect = 00  ReadData = 0000000000001111  WriteData =     7
+# ALUQ =     7  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000000  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000001  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000010  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000011  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000100  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000101  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000110  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000000111  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001001  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001010  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001011  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001100  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001101  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001110  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     8  RFSelect = 00  ReadData = 0000000000001111  WriteData =     8
+# ALUQ =     8  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000000  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000001  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000010  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000011  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000100  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000101  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000110  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000000111  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001000  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001010  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001011  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001100  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001101  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001110  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =     9  RFSelect = 00  ReadData = 0000000000001111  WriteData =     9
+# ALUQ =     9  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000000  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000001  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000010  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000011  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000100  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000101  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000110  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000000111  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001000  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001001  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001011  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001100  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001101  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001110  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    10  RFSelect = 00  ReadData = 0000000000001111  WriteData =    10
+# ALUQ =    10  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000000  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000001  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000010  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000011  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000100  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000101  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000110  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000000111  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001000  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001001  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001010  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001100  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001101  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001110  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    11  RFSelect = 00  ReadData = 0000000000001111  WriteData =    11
+# ALUQ =    11  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000000  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000001  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000010  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000011  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000100  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000101  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000110  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000000111  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001000  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001001  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001010  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001011  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001101  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001110  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    12  RFSelect = 00  ReadData = 0000000000001111  WriteData =    12
+# ALUQ =    12  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000000  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000001  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000010  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000011  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000100  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000101  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000110  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000000111  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001000  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001001  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001010  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001011  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001100  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001110  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    13  RFSelect = 00  ReadData = 0000000000001111  WriteData =    13
+# ALUQ =    13  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000000  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000001  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000010  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000011  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000100  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000101  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000110  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000000111  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001000  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001001  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001010  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001011  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001100  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001101  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    14  RFSelect = 00  ReadData = 0000000000001111  WriteData =    14
+# ALUQ =    14  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000000  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000000  WriteData =     0
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000001  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000001  WriteData =     1
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000010  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000010  WriteData =     2
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000011  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000011  WriteData =     3
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000100  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000100  WriteData =     4
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000101  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000101  WriteData =     5
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000110  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000110  WriteData =     6
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000000111  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000000111  WriteData =     7
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001000  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001000  WriteData =     8
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001001  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001001  WriteData =     9
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001010  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001010  WriteData =    10
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001011  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001011  WriteData =    11
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001100  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001100  WriteData =    12
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001101  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001101  WriteData =    13
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001110  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001110  WriteData =    14
+# ALUQ =    15  RFSelect = 00  ReadData = 0000000000001111  WriteData =    15
+# ALUQ =    15  RFSelect = 01  ReadData = 0000000000001111  WriteData =    15
+quit -sim
+# End time: 19:50:03 on May 22,2023, Elapsed time: 0:00:43
+# Errors: 0, Warnings: 0

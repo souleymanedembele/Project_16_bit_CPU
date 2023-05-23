@@ -1,61 +1,113 @@
 m255
 K4
 z2
-!s11f vlog 2020.1 2020.02, Feb 28 2020
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project
-vregFile16x16
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1684689013
+dC:/intelFPGA_lite/20.1
+vALU
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1684808252
 !i10b 1
-!s100 iZfT985GDTUon=D2ViZ>e3
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-Ic5SY0o@B<L9AnPChHO?z>1
-Z4 VDg1SIo80bB@j0V0VzS_@n1
+!s100 _7b:^F2X?VH1FLcBd6M=Z1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IB[e?z2FMomV2n8RFB4ACz0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
-R0
-Z5 w1684688365
-Z6 8./regFile16x16.sv
-Z7 F./regFile16x16.sv
-!i122 0
-L0 9 28
+Z4 dC:/Users/jotka/OneDrive/Desktop/Cpu project
+Z5 w1684448982
+Z6 8C:/Users/jotka/OneDrive/Desktop/Cpu project/ALU.sv
+Z7 FC:/Users/jotka/OneDrive/Desktop/Cpu project/ALU.sv
+!i122 16
+L0 7 20
 Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1684689013.000000
-!s107 ./regFile16x16.sv|
-Z10 !s90 -reportprogress|300|./regFile16x16.sv|
+Z9 !s108 1684808252.000000
+Z10 !s107 C:/Users/jotka/OneDrive/Desktop/Cpu project/ALU.sv|
+Z11 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jotka/OneDrive/Desktop/Cpu project/ALU.sv|
 !i113 1
-Z11 tCvgOpt 0
-nreg@file16x16
-vregFile16x16_tb
-R1
-R2
-!i10b 1
-!s100 1_c5g6WTMUT=gS:LgGcO82
-R3
-I0li^X]2=aCeHdoeT^4U_01
-R4
-S1
+Z12 o-work work -sv
+Z13 tCvgOpt 0
+n@a@l@u
+vALU_tb
 R0
+R1
+!i10b 1
+!s100 ST5hYXZU>Van4eDC45QdE3
+R2
+I0_;KiZ?;FkCIC]QJ43b9h1
+R3
+S1
+R4
 R5
 R6
 R7
-!i122 0
-L0 39 51
+!i122 16
+L0 28 27
 R8
 r1
 !s85 0
 31
 R9
-Z12 !s107 ./regFile16x16.sv|
 R10
-!i113 1
 R11
-nreg@file16x16_tb
+!i113 1
+R12
+R13
+n@a@l@u_tb
+vMux2to1
+R0
+Z14 !s110 1684810159
+!i10b 1
+!s100 Oham0n:>^D=61SRVOX1M:2
+R2
+I6a17zgIzTlY<`DVNiTJ2O1
+R3
+S1
+R4
+Z15 w1684810152
+Z16 8./Mux2to1.sv
+Z17 F./Mux2to1.sv
+!i122 25
+L0 7 14
+R8
+r1
+!s85 0
+31
+Z18 !s108 1684810159.000000
+!s107 ./Mux2to1.sv|
+Z19 !s90 -reportprogress|300|./Mux2to1.sv|
+!i113 1
+R13
+n@mux2to1
+vMux2to1_tb
+R0
+R14
+!i10b 1
+!s100 Dg_E]DN@US:YLj>jW:SL11
+R2
+IImz4Fmd>FE5OGKkd4aGdG3
+R3
+S1
+R4
+R15
+R16
+R17
+!i122 25
+L0 22 31
+R8
+r1
+!s85 0
+31
+R18
+Z20 !s107 ./Mux2to1.sv|
+R19
+!i113 1
+R13
+n@mux2to1_tb
