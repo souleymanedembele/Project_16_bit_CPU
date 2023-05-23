@@ -9,38 +9,138 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project
+vALU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1684812178
+!i10b 1
+!s100 _7b:^F2X?VH1FLcBd6M=Z1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IQz]:o^Gb[ocUUIfXE4:3f1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1684812124
+Z6 8./ALU.sv
+Z7 F./ALU.sv
+!i122 3
+L0 7 20
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1684812177.000000
+!s107 ./ALU.sv|
+Z10 !s90 -reportprogress|300|./ALU.sv|
+!i113 1
+Z11 tCvgOpt 0
+n@a@l@u
+vALU_tb
+R1
+R2
+!i10b 1
+!s100 ST5hYXZU>Van4eDC45QdE3
+R3
+I=0zUfBE[c8X:0FU3h:F[=1
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 3
+L0 28 27
+R8
+r1
+!s85 0
+31
+R9
+Z12 !s107 ./ALU.sv|
+R10
+!i113 1
+R11
+n@a@l@u_tb
 vDataMemory
-Z1 !s110 1684696403
+Z13 !s110 1684696403
 !i10b 1
 !s100 QHDFNm[3lN8g<@K49lKG?1
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+R3
 Id`J^9oXg;F=;KYd4=on6g0
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+R4
 R0
 w1684694628
 8./DataMemory.v
 F./DataMemory.v
 !i122 1
 L0 40 66
-Z4 OV;L;2020.1;71
+R8
 r1
 !s85 0
 31
-Z5 !s108 1684696403.000000
+Z14 !s108 1684696403.000000
 !s107 ./DataMemory.v|
 !s90 -reportprogress|300|-work|work|+acc|./DataMemory.v|
 !i113 1
-Z6 o-work work +acc
-Z7 tCvgOpt 0
+Z15 o-work work +acc
+R11
 n@data@memory
-vtestDataMemory
-DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+vMux2to1
 R1
+Z16 !s110 1684812167
+!i10b 1
+!s100 Oham0n:>^D=61SRVOX1M:2
+R3
+I6a17zgIzTlY<`DVNiTJ2O1
+R4
+S1
+R0
+R5
+Z17 8./Mux2to1.sv
+Z18 F./Mux2to1.sv
+!i122 2
+L0 7 14
+R8
+r1
+!s85 0
+31
+Z19 !s108 1684812166.000000
+Z20 !s107 ./Mux2to1.sv|
+Z21 !s90 -reportprogress|300|./Mux2to1.sv|
+!i113 1
+R11
+n@mux2to1
+vMux2to1_tb
+R1
+R16
+!i10b 1
+!s100 Dg_E]DN@US:YLj>jW:SL11
+R3
+IImz4Fmd>FE5OGKkd4aGdG3
+R4
+S1
+R0
+R5
+R17
+R18
+!i122 2
+L0 22 31
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!i113 1
+R11
+n@mux2to1_tb
+vtestDataMemory
+R1
+R13
 !i10b 1
 !s100 Noa1<_Cl3RDi48cLP=h@Q3
-R2
-IdMKOd[5GMUa[7Ta8mBBRz2
 R3
+IdMKOd[5GMUa[7Ta8mBBRz2
+R4
 S1
 R0
 w1684696361
@@ -48,14 +148,14 @@ w1684696361
 F./testDataMemory.sv
 !i122 0
 L0 11 37
-R4
+R8
 r1
 !s85 0
 31
-R5
+R14
 !s107 ./testDataMemory.sv|
 !s90 -reportprogress|300|-work|work|+acc|./testDataMemory.sv|
 !i113 1
-R6
-R7
+R15
+R11
 ntest@data@memory

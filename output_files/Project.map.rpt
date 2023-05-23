@@ -1,0 +1,604 @@
+Analysis & Synthesis report for Project
+Mon May 22 23:13:00 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "Decoder:Decoder7"
+ 11. Port Connectivity Checks: "Decoder:Decoder6"
+ 12. Port Connectivity Checks: "Decoder:Decoder5"
+ 13. Port Connectivity Checks: "Decoder:Decoder4"
+ 14. Port Connectivity Checks: "Decoder:Decoder3"
+ 15. Port Connectivity Checks: "Decoder:Decoder2"
+ 16. Port Connectivity Checks: "Decoder:Decoder1"
+ 17. Port Connectivity Checks: "Decoder:Decoder0"
+ 18. Port Connectivity Checks: "regFile16x16:DUT"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon May 22 23:13:00 2023       ;
+; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                      ; Project                                     ;
+; Top-level Entity Name              ; Project                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 276                                         ;
+;     Total combinational functions  ; 180                                         ;
+;     Dedicated logic registers      ; 96                                          ;
+; Total registers                    ; 96                                          ;
+; Total pins                         ; 96                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; Project            ; Project            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; Decoder.sv                       ; yes             ; User SystemVerilog HDL File  ; /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Decoder.sv      ;         ;
+; regFile16x16.sv                  ; yes             ; User SystemVerilog HDL File  ; /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/regFile16x16.sv ;         ;
+; Project.sv                       ; yes             ; User SystemVerilog HDL File  ; /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv      ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 276          ;
+;                                             ;              ;
+; Total combinational functions               ; 180          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 136          ;
+;     -- 3 input functions                    ; 28           ;
+;     -- <=2 input functions                  ; 16           ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 180          ;
+;     -- arithmetic mode                      ; 0            ;
+;                                             ;              ;
+; Total registers                             ; 96           ;
+;     -- Dedicated logic registers            ; 96           ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 96           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 97           ;
+; Total fan-out                               ; 1092         ;
+; Average fan-out                             ; 2.33         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                             ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name       ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+--------------+
+; |Project                   ; 180 (0)             ; 96 (0)                    ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |Project                  ; Project      ; work         ;
+;    |Decoder:Decoder0|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|Decoder:Decoder0 ; Decoder      ; work         ;
+;    |Decoder:Decoder1|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|Decoder:Decoder1 ; Decoder      ; work         ;
+;    |Decoder:Decoder4|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|Decoder:Decoder4 ; Decoder      ; work         ;
+;    |Decoder:Decoder5|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|Decoder:Decoder5 ; Decoder      ; work         ;
+;    |regFile16x16:DUT|      ; 152 (152)           ; 96 (96)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Project|regFile16x16:DUT ; regFile16x16 ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; regFile16x16:DUT|regFile~12             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~13             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~14             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~15             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~28             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~29             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~30             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~31             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~44             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~45             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~46             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~47             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~60             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~61             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~62             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~63             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~76             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~77             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~78             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~79             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~92             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~93             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~94             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~95             ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~108            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~109            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~110            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~111            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~124            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~125            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~126            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~127            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~140            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~141            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~142            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~143            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~156            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~157            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~158            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~159            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~172            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~173            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~174            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~175            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~188            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~189            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~190            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~191            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~204            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~205            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~206            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~207            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~220            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~221            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~222            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~223            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~236            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~237            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~238            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~239            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~252            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~253            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~254            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~255            ; Lost fanout                            ;
+; regFile16x16:DUT|regFile~6              ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~22             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~38             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~54             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~70             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~86             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~102            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~118            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~134            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~150            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~166            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~182            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~198            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~214            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~230            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~246            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~7              ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~23             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~39             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~55             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~71             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~87             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~103            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~119            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~135            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~151            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~167            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~183            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~199            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~215            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~231            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~247            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~8              ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~24             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~40             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~56             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~72             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~88             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~104            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~120            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~136            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~152            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~168            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~184            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~200            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~216            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~232            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~248            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~9              ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~25             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~41             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~57             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~73             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~89             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~105            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~121            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~137            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~153            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~169            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~185            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~201            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~217            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~233            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~249            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~10             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~26             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~42             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~58             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~74             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~90             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~106            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~122            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~138            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~154            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~170            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~186            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~202            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~218            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~234            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~250            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~11             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~27             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~43             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~59             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~75             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~91             ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~107            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~123            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~139            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~155            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~171            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~187            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~203            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~219            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~235            ; Stuck at GND due to stuck port data_in ;
+; regFile16x16:DUT|regFile~251            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 160 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 96    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder7"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder6"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder5"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder4"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder3"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder2"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder1"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:Decoder0"                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; C    ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "C[3..3]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "regFile16x16:DUT"                                                                                                                                   ;
++---------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                          ;
++---------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; wrData  ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (16 bits) it drives.  Extra input bit(s) "wrData[15..6]" will be connected to GND. ;
+; rdDataA ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (12 bits) it drives; bit(s) "rdDataA[15..12]" have no fanouts                   ;
+; rdDataB ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (12 bits) it drives; bit(s) "rdDataB[15..12]" have no fanouts                   ;
++---------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 96                          ;
+; cycloneiii_ff         ; 96                          ;
+;     ENA               ; 96                          ;
+; cycloneiii_lcell_comb ; 186                         ;
+;     normal            ; 186                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 136                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.77                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Mon May 22 23:12:51 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file Decoder.sv
+    Info (12023): Found entity 1: Decoder File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Decoder.sv Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file testDataMemory.sv
+    Info (12023): Found entity 1: testDataMemory File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/testDataMemory.sv Line: 11
+Info (12021): Found 2 design units, including 2 entities, in source file ALU.sv
+    Info (12023): Found entity 1: ALU File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/ALU.sv Line: 7
+    Info (12023): Found entity 2: ALU_tb File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/ALU.sv Line: 28
+Info (12021): Found 2 design units, including 2 entities, in source file Mux2to1.sv
+    Info (12023): Found entity 1: Mux2to1 File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Mux2to1.sv Line: 7
+    Info (12023): Found entity 2: Mux2to1_tb File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Mux2to1.sv Line: 22
+Info (12021): Found 2 design units, including 2 entities, in source file regFile16x16.sv
+    Info (12023): Found entity 1: regFile16x16 File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/regFile16x16.sv Line: 9
+    Info (12023): Found entity 2: regFile16x16_tb File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/regFile16x16.sv Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file Project.sv
+    Info (12023): Found entity 1: Project File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 3
+Info (12127): Elaborating entity "Project" for the top level hierarchy
+Info (12128): Elaborating entity "regFile16x16" for hierarchy "regFile16x16:DUT" File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 39
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:Decoder0" File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 44
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "regFile16x16:DUT|regFile" is uninferred due to asynchronous read logic File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/regFile16x16.sv Line: 24
+Warning (12241): 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[5]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[4]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[3]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[2]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[1]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX6[0]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[5]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[4]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[3]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[2]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[1]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+    Warning (13410): Pin "HEX7[0]" is stuck at GND File: /mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/Project.sv Line: 23
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 64 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 372 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 76 output pins
+    Info (21061): Implemented 276 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 397 megabytes
+    Info: Processing ended: Mon May 22 23:13:00 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:16
+
+
