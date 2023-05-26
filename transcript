@@ -6879,3 +6879,3130 @@ do runrtlDatapath.do
 # 420 ns
 # 
 # End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:59:06 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 20:59:07 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:59:07 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 20:59:07 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:59:07 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 20:59:07 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:59:07 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 20:59:07 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:59:07 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 20:59:07 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 20:59:10 on May 25,2023, Elapsed time: 2:48:24
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 20:59:10 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ** Note: $stop    : ./Datapath.sv(114)
+#    Time: 40 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 114
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 42 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:17 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:13:17 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:17 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:13:17 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:17 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:13:17 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:17 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:13:17 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:13:17 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:13:18 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:13:21 on May 25,2023, Elapsed time: 0:14:11
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:13:21 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ** Note: $stop    : ./Datapath.sv(124)
+#    Time: 60 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 124
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 63 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:29 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:14:29 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:29 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:14:29 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:29 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:14:30 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:30 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:14:30 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:14:30 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:14:30 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:14:33 on May 25,2023, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:14:33 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00 
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(124)
+#    Time: 60 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 124
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 63 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:22:13 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:22:13 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:22:13 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:22:13 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:22:13 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:22:14 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:22:14 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:22:14 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:22:14 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:22:14 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:22:17 on May 25,2023, Elapsed time: 0:07:44
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:22:17 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00 
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(126)
+#    Time: 60 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 126
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 63 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:21 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:23:21 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:21 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:23:21 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:21 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:23:22 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:22 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:23:22 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:23:22 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:23:22 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:23:25 on May 25,2023, Elapsed time: 0:01:08
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:23:25 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00 
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(127)
+#    Time: 80 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 127
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 84 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:25:04 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:25:04 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:25:04 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:25:05 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:25:05 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:25:05 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:25:05 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:25:05 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:25:05 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:25:05 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:25:08 on May 25,2023, Elapsed time: 0:01:43
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:25:08 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00 
+# ALU_inA = 0000000000000001, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(136)
+#    Time: 100 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 136
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 105 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:12 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:26:12 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:12 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:26:12 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:12 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:26:12 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:12 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:26:13 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:26:13 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:26:13 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:26:15 on May 25,2023, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:26:15 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00 
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(133)
+#    Time: 80 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 133
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 84 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:15 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:27:15 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:15 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:27:15 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:15 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:27:16 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:16 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:27:16 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:16 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:27:16 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:27:19 on May 25,2023, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:27:19 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(127)
+#    Time: 100 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 127
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 105 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:59 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:27:59 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:27:59 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:28:00 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:00 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:28:00 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:00 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:28:00 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:00 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:28:00 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:28:03 on May 25,2023, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:28:03 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(128)
+#    Time: 100 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 128
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 105 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:38 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:28:39 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:28:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:28:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:28:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:28:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:28:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:28:43 on May 25,2023, Elapsed time: 0:00:40
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:28:43 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01 
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=00 
+# ** Note: $stop    : ./Datapath.sv(129)
+#    Time: 100 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 129
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 105 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:29:57 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:29:57 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:29:57 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:29:57 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:29:57 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:29:58 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:29:58 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:29:58 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:29:58 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:29:58 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:30:01 on May 25,2023, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:30:01 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = 0000000000000000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ** Note: $stop    : ./Datapath.sv(128)
+#    Time: 100 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 128
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 105 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:30:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:30:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:30:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:30:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:30:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:30:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:30:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:30:41 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:30:41 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:30:41 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:30:44 on May 25,2023, Elapsed time: 0:00:43
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:30:44 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ** Note: $stop    : ./Datapath.sv(128)
+#    Time: 60 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 128
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 63 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:07 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:31:07 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:07 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:31:08 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:08 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:31:08 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:08 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:31:08 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:31:08 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:31:08 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:31:11 on May 25,2023, Elapsed time: 0:00:27
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:31:11 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ** Note: $stop    : ./Datapath.sv(128)
+#    Time: 340 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 128
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 357 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:37:18 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:37:18 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:37:18 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:37:18 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:37:18 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:37:18 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:37:18 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:37:19 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:37:19 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:37:19 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:37:21 on May 25,2023, Elapsed time: 0:06:10
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:37:21 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001110
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = zzzzzzzzzzzzzzzz, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001111
+# ** Note: $stop    : ./Datapath.sv(130)
+#    Time: 640 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 130
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 672 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:39:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:39:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:39:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:39:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:39:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:39:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:39:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:39:39 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:39:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:39:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:39:43 on May 25,2023, Elapsed time: 0:02:22
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:39:43 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000001, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000010, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000011, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000100, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000101, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000110, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000111, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001000, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001001, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001010, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001011, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001100, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001101, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001110, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001111, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001110
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001111
+# ** Note: $stop    : ./Datapath.sv(132)
+#    Time: 640 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 132
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 672 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:23 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:40:24 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:24 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:40:24 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:24 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:40:24 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:24 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:40:24 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:24 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:40:24 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:40:27 on May 25,2023, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:40:27 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000001, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000010, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000011, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000100, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000101, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000110, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000111, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001000, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001001, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001010, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001011, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001100, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001101, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001110, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001111, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ** Note: $stop    : ./Datapath.sv(133)
+#    Time: 360 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 133
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 378 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:46 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:40:46 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:46 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:40:46 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:46 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:40:47 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:47 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:40:47 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:40:47 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:40:47 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:40:50 on May 25,2023, Elapsed time: 0:00:23
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:40:50 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000001, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000010, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000011, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000100, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000101, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000110, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000111, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001000, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001001, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001010, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001011, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001100, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001101, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001110, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001111, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ** Note: $stop    : ./Datapath.sv(134)
+#    Time: 540 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 134
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 567 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:41:39 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:41:40 on May 25,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:41:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:41:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:41:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:41:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:41:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:41:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:41:40 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:41:40 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:41:44 on May 25,2023, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:41:44 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000001, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000010, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000011, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000100, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000101, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000110, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000111, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001000, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001001, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001010, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001011, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001100, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001101, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001110, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001111, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001110
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001111
+# ** Note: $stop    : ./Datapath.sv(132)
+#    Time: 640 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 132
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 672 ns
+# 
+# End
+do runrtlDatapath.do
+# turn on verbage
+# transcript on
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 133: Unable to remove directory "/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Datapath.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:42:58 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Datapath.sv 
+# -- Compiling module Datapath
+# -- Compiling module Datapath_tb
+# 
+# Top level modules:
+# 	Datapath_tb
+# End time: 21:42:58 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMemory.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:42:59 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 21:42:59 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ALU.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:42:59 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:42:59 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./regFile16x16.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:42:59 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./regFile16x16.sv 
+# -- Compiling module regFile16x16
+# -- Compiling module regFile16x16_tb
+# 
+# Top level modules:
+# 	regFile16x16_tb
+# End time: 21:42:59 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Mux2to1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:42:59 on May 25,2023
+# vlog -reportprogress 300 -work work "+acc" ./Mux2to1.sv 
+# -- Compiling module Mux2to1
+# -- Compiling module Mux2to1_tb
+# 
+# Top level modules:
+# 	Mux2to1_tb
+# End time: 21:42:59 on May 25,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Datapath_tb
+# End time: 21:43:02 on May 25,2023, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Datapath_tb 
+# Start time: 21:43:02 on May 25,2023
+# Loading sv_std.std
+# Loading work.Datapath_tb
+# Loading work.Datapath
+# Loading work.DataMemory
+# Loading altera_mf_ver.altsyncram
+# Loading work.Mux2to1
+# Loading work.regFile16x16
+# Loading work.ALU
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do waveDatapath.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Datapath_tb/Clock
+# add wave -noupdate /Datapath_tb/D_Addr
+# add wave -noupdate /Datapath_tb/D_Wr
+# add wave -noupdate /Datapath_tb/RF_s
+# add wave -noupdate /Datapath_tb/RF_W_Addr
+# add wave -noupdate /Datapath_tb/RF_W_en
+# add wave -noupdate /Datapath_tb/RF_Ra_Addr
+# add wave -noupdate /Datapath_tb/RF_Rb_Addr
+# add wave -noupdate /Datapath_tb/ALU_s0
+# add wave -noupdate /Datapath_tb/ALU_inA
+# add wave -noupdate /Datapath_tb/ALU_inB
+# add wave -noupdate /Datapath_tb/ALU_out
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+# quietly wave cursor active 0            
+# configure wave -namecolwidth 150        
+# configure wave -valuecolwidth 100       
+# configure wave -justifyvalue left       
+# configure wave -signalnamewidth 0       
+# configure wave -snapdistance 10         
+# configure wave -datasetprefix 0         
+# configure wave -rowmargin 4             
+# configure wave -childrowmargin 2        
+# configure wave -gridoffset 0            
+# configure wave -gridperiod 1            
+# configure wave -griddelta 40            
+# configure wave -timeline 0              
+# configure wave -timelineunits ps        
+# update                                  
+# WaveRestoreZoom {0 ps} {1 ns}          
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+# ALU_inA = xxxxxxxxxxxxxxxx, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=0000000000000000, MUX_SELECT=01, DataMemory=0000000000000000
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000000, MUX_Q=xxxxxxxxxxxxxxxx, MUX_SELECT=01, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000001, MUX_Q=0000000000000001, MUX_SELECT=00, DataMemory=xxxxxxxxxxxxxxxx
+# ALU_inA = 0000000000000001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000010, MUX_Q=0000000000000010, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000011, MUX_Q=0000000000000011, MUX_SELECT=00, DataMemory=0000000000000000
+# ALU_inA = 0000000000000011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000100, MUX_Q=0000000000000100, MUX_SELECT=00, DataMemory=0000000000000001
+# ALU_inA = 0000000000000100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000101, MUX_Q=0000000000000101, MUX_SELECT=00, DataMemory=0000000000000010
+# ALU_inA = 0000000000000101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000110, MUX_Q=0000000000000110, MUX_SELECT=00, DataMemory=0000000000000011
+# ALU_inA = 0000000000000110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000000111, MUX_Q=0000000000000111, MUX_SELECT=00, DataMemory=0000000000000100
+# ALU_inA = 0000000000000111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001000, MUX_Q=0000000000001000, MUX_SELECT=00, DataMemory=0000000000000101
+# ALU_inA = 0000000000001000, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001001, MUX_Q=0000000000001001, MUX_SELECT=00, DataMemory=0000000000000110
+# ALU_inA = 0000000000001001, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001010, MUX_Q=0000000000001010, MUX_SELECT=00, DataMemory=0000000000000111
+# ALU_inA = 0000000000001010, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001011, MUX_Q=0000000000001011, MUX_SELECT=00, DataMemory=0000000000001000
+# ALU_inA = 0000000000001011, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001100, MUX_Q=0000000000001100, MUX_SELECT=00, DataMemory=0000000000001001
+# ALU_inA = 0000000000001100, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001101, MUX_Q=0000000000001101, MUX_SELECT=00, DataMemory=0000000000001010
+# ALU_inA = 0000000000001101, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001110, MUX_Q=0000000000001110, MUX_SELECT=00, DataMemory=0000000000001011
+# ALU_inA = 0000000000001110, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000001111, MUX_Q=0000000000001111, MUX_SELECT=00, DataMemory=0000000000001100
+# ALU_inA = 0000000000001111, ALU_inB = xxxxxxxxxxxxxxxx, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001101
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001110
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000010000, MUX_Q=0000000000010000, MUX_SELECT=00, DataMemory=0000000000001111
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000010000, ALU_out = 0000000000011111, MUX_Q=0000000000011111, MUX_SELECT=00, DataMemory=0000000000001111
+# ALU_inA = 0000000000001111, ALU_inB = 0000000000011111, ALU_out = 0000000000101110, MUX_Q=0000000000101110, MUX_SELECT=00, DataMemory=0000000000001111
+# ** Note: $stop    : ./Datapath.sv(133)
+#    Time: 660 ns  Iteration: 0  Instance: /Datapath_tb
+# Break in Module Datapath_tb at ./Datapath.sv line 133
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 693 ns
+# 
+# End

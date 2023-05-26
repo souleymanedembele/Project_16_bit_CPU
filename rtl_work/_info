@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project
 vALU
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1685063444
+Z2 !s110 1685076179
 !i10b 1
 !s100 230dgSVL1[=5^DgPP9=o=1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -28,7 +28,7 @@ Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1685063444.000000
+Z9 !s108 1685076179.000000
 Z10 !s107 ./ALU.sv|
 Z11 !s90 -reportprogress|300|-work|work|+acc|./ALU.sv|
 !i113 1
@@ -78,7 +78,7 @@ R8
 r1
 !s85 0
 31
-Z14 !s108 1685063443.000000
+R9
 !s107 ./DataMemory.v|
 !s90 -reportprogress|300|-work|work|+acc|./DataMemory.v|
 !i113 1
@@ -87,24 +87,24 @@ R13
 n@data@memory
 vDatapath
 R1
-Z15 !s110 1685063443
+Z14 !s110 1685076178
 !i10b 1
-!s100 Beb_BjBk=j1EI:Uda;lTg2
+!s100 >MYAXblY_<i3G7f2KT[OC3
 R3
-Ij[TX?zd[kKZ?nma9;0b;X1
+I@AAe61bXYYmZLnSK4JONA3
 R4
 S1
 R0
-Z16 w1685063433
-Z17 8./Datapath.sv
-Z18 F./Datapath.sv
+Z15 w1685076173
+Z16 8./Datapath.sv
+Z17 F./Datapath.sv
 !i122 0
-L0 4 58
+L0 4 60
 R8
 r1
 !s85 0
 31
-R14
+Z18 !s108 1685076178.000000
 Z19 !s107 ./Datapath.sv|
 Z20 !s90 -reportprogress|300|-work|work|+acc|./Datapath.sv|
 !i113 1
@@ -113,24 +113,24 @@ R13
 n@datapath
 vDatapath_tb
 R1
-R15
+R14
 !i10b 1
-!s100 ?A[Z`z`zPOSDLM<UV?7O50
+!s100 4M6adl_m5[lBfC]`V1>h31
 R3
-IVk9K;fV?LAH:z?YbLMl<K3
+ID>ifme>CclCdGhBAHeLcM2
 R4
 S1
 R0
+R15
 R16
 R17
-R18
 !i122 0
-L0 64 58
+L0 66 75
 R8
 r1
 !s85 0
 31
-R14
+R18
 R19
 R20
 !i113 1

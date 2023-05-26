@@ -58,6 +58,8 @@ module Datapath (
       .Q  (ALU_Q)
   );
 
+  assign ALU_out = ALU_Q;
+
 endmodule
 
 `timescale 1ns / 1ns
@@ -94,29 +96,46 @@ module Datapath_tb ();
 
   initial begin
     ALU_s0 = 3'h0;  // ALU selectbit to be 0
-    RF_s = 2'b00;
-    RF_W_en = 1;
-    D_Wr = 1;
-    RF_W_Addr = 4'h1;
-    RF_Ra_Addr = 4'h1;
-    RF_Rb_Addr = 4'h2;
-    D_Addr = 8'h1;
-    #200;
+    RF_s = 2'b00;  // RF selectbit to be 0
+    RF_W_en = 1;  // RF write enable to be 1
+    D_Wr = 1;  // Data memory write enable to be 1
+    RF_W_Addr = 4'h1;  // RF write address to be 1
+    RF_Ra_Addr = 4'h1;  // RF read address A to be 1
+    RF_Rb_Addr = 4'h2;  // RF read address B to be 2
+    D_Addr = 8'h1;  // Data memory address to be 1
+    #20;  // wait for 20ns
     ALU_s0 = 3'h0;  // ALU selectbit to be 0
-    RF_s = 2'b01;
+    RF_s = 2'b01;  // RF selectbit to be 1
     RF_W_en = 1;
     D_Wr = 1;
     RF_W_Addr = 4'h1;
     RF_Ra_Addr = 4'h1;
     RF_Rb_Addr = 4'h2;
     D_Addr = 8'h1;
-    #200;
+    // #20;
+    // RF_W_Addr = 4'h2;  // RF write address to be 2 now
+    // D_Addr = 8'h1;
+    #20;
+    ALU_s0 = 3'h7;  // ALU selectbit to be 0 meaning increment
+    RF_s = 2'b00;  // RF selectbit to be 1 now read from data memory
+    RF_W_en = 1;
+    D_Wr = 1;
+    RF_W_Addr = 4'h1;
+    RF_Ra_Addr = 4'h1;
+    RF_Rb_Addr = 4'h2;
+    D_Addr = 8'h1;
+    #300;
+    RF_W_Addr = 4'h2;  // RF write address to be 2 now
+    #300;
+    ALU_s0 = 3'h1;  // now do addition
+    #20;
+
     $stop;
   end
 
   initial begin
-    $monitor("ALU_inA = %b, ALU_inB = %b, ALU_out = %b, MUX_Q=%b, MUX_SELECT=%b ", ALU_inA,
-             ALU_inB, ALU_out, DUT.MUX_Q, RF_s);
+    $monitor("ALU_inA = %b, ALU_inB = %b, ALU_out = %b, MUX_Q=%b, MUX_SELECT=%b, DataMemory=%b",
+             ALU_inA, ALU_inB, ALU_out, DUT.MUX_Q, RF_s, DUT.DMem_Q);
   end
 endmodule
 
