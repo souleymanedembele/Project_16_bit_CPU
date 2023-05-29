@@ -32,7 +32,8 @@ module Controller (
   output [3:0] RF_Ra_Addr, RF_Rb_Addr, RF_W_Addr;
   output [2:0] ALU_s0;
 
-  wire IMem_Q, IR_Ld, PCUp, PCClr;
+  wire [15:0] IMem_Q;
+  wire IR_Ld, PCUp, PCClr;
 
   myROM IMem (
       .address(PC_Out),
@@ -74,6 +75,8 @@ module Controller (
 
 endmodule
 
+`timescale 1ns / 1ns
+
 module Controller_tb;
   reg Clk, Rst;
 
@@ -110,5 +113,13 @@ module Controller_tb;
 
   initial begin
     Rst = 1;
+    #20;
+    Rst = 0;
+    #5000;
+    $stop;
+  end
+
+  initial begin
+    $monitor($time,,, "IMem_Q = %b", CU.IMem_Q);
   end
 endmodule
