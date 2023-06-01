@@ -74,7 +74,6 @@ module ControllerStateMachine (
     RFWriteAddr = 4'b0;  // clear RFWriteAddr
     RFAReadAddr = 4'b0;  // clear RFAReadAddr
     RFBReadAddr = 4'b0;  // clear RFBReadAddr
-    NextState = CurrentState;  // default next state
 
     case (CurrentState)
       INIT: begin
