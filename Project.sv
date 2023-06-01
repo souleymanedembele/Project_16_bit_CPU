@@ -34,19 +34,41 @@ module Project (
   assign LEDG = KEY;
 
   wire [2:0] M0, M1, M2, M3, M4, M5, M6, M7;
+  wire ButtonOut, FilterOut, Strobe;
+  wire [15:0] ALU_A, ALU_B, ALU_Out, IR_Out;
+  wire [7:0] NextStateOut, PC_Out, StateOut;
 
-  regFile16x16 DUT (
-      .clk(KEY[0]),
-      .write(KEY[1]),
-      .wrAddr(SW[9:6]),
-      .wrData(SW[5:0]),
-      .rdAddrA(SW[13:10]),
-      .rdDataA({M3, M2, M1, M0}),
-      .rdAddrB(SW[17:14]),
-      .rdDataB({M7, M6, M5, M4})
+  // ButtonSyncReg: BS
+  ButtonSyncReg BS (
+      .Clock(CLOCK_50),
+      .ButtonIn(KEY[0]),
+      .ButtonOut(ButtonOut)
+  );
+  // KeyFilter:Filter
+  KeyFilter Filter (
+      .Clock(CLOCK_50),
+      .In(ButtonOut),
+      .Out(FilterOut),
+      .Strobe(Strobe)
+  );
+  // Processor: Proc
+  // Mux8t1Nway: Mx
+  Mux_Nw_8_to_1 #(
+      .N(16)
+  ) Mux_Nw_8_to_1 (
+      .S(SW[2:0]),
+      .A({PC_Out, State_Out}),
+      .B(ALU_A),
+      .C(ALU_B),
+      .D(ALU_Out),
+      .E({NextStateOut, 7'h0}),
+      .F(16'h0),
+      .G(16'h0),
+      .H(16'h0),
+      .M({M7, M4, M5, M6})
   );
 
-  // Processor
+  assign {M0, M1, M2, M3} = IR_Out[15:0];
 
   Decoder Decoder0 (
       .C  (M0),
