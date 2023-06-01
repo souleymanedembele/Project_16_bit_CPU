@@ -52,6 +52,17 @@ module Project (
       .Strobe(Strobe)
   );
   // Processor: Proc
+  Processor Proc (
+      .Clk(CLOCK_50),
+      .Reset(KEY[3]),
+      .IR_Out(IR_Out),
+      .PC_Out(PC_Out),
+      .State(StateOut),
+      .NextState(NextStateOut),
+      .ALU_A(ALU_A),
+      .ALU_B(ALU_B),
+      .ALU_Out(ALU_Out),
+  );
   // Mux8t1Nway: Mx
   Mux_Nw_8_to_1 #(
       .N(16)
