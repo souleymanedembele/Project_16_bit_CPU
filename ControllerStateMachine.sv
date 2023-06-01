@@ -2,7 +2,7 @@
  * File              : ControllerStateMachine.sv
  * Author            : Souleymane Dembele <sdembele@uw.edu>
  * Date              : 05.27.2023
- * Last Modified Date: 05.30.2023
+ * Last Modified Date: 06.01.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -64,8 +64,18 @@ module ControllerStateMachine (
   // Define the next state logic
   always_comb begin
     PCClr = 1'b0;  // clear PC
-    PCUp  = 1'b0;  // increment PC
-    IRLd  = 1'b0;  // load instruction
+    PCUp = 1'b0;  // increment PC
+    IRLd = 1'b0;  // load instruction
+    DWrite = 1'b0;  // disable DWrite
+    RFWriteEnable = 1'b0;  // disable RFWrite
+    RFSelect = 1'b0;  // select RF
+    ALUSelect = 3'b000;  // set ALUSelect
+    DAddr = 8'b0;  // clear DAddr
+    RFWriteAddr = 4'b0;  // clear RFWriteAddr
+    RFAReadAddr = 4'b0;  // clear RFAReadAddr
+    RFBReadAddr = 4'b0;  // clear RFBReadAddr
+    NextState = CurrentState;  // default next state
+
     case (CurrentState)
       INIT: begin
         // INIT
