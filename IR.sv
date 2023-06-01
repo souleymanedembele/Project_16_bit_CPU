@@ -2,7 +2,7 @@
  * File              : IR.sv
  * Author            : Souleymane Dembele <sdembele@uw.edu> and Jot
  * Date              : 05.28.2023
- * Last Modified Date: 05.28.2023
+ * Last Modified Date: 05.30.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -16,7 +16,7 @@ module IR (
   input [15:0] instruction;
   output [15:0] instructionOut;
   reg [15:0] instructionOut;
-  always_ff @(posedge Clock, negedge Ld) begin
+  always_ff @(posedge Clock) begin
     if (Ld) begin
       instructionOut <= instruction;
     end

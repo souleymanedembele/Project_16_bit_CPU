@@ -2,7 +2,7 @@
  * File              : Controller.sv
  * Author            : Souleymane and Jot
  * Date              : 05.28.2023
- * Last Modified Date: 05.28.2023
+ * Last Modified Date: 05.29.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -115,11 +115,11 @@ module Controller_tb;
     Rst = 1;
     #20;
     Rst = 0;
-    #5000;
+    #500;
     $stop;
   end
 
   initial begin
-    $monitor($time,,, "IMem_Q = %b", CU.IMem_Q);
+    $monitor($time,,, "IMem_Q = %b, PC_Out=%b", CU.IMem_Q, PC_Out);
   end
 endmodule

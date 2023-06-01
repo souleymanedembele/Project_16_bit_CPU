@@ -2,7 +2,7 @@
  * File              : ControllerStateMachine.sv
  * Author            : Souleymane Dembele <sdembele@uw.edu>
  * Date              : 05.27.2023
- * Last Modified Date: 05.28.2023
+ * Last Modified Date: 05.30.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -57,12 +57,15 @@ module ControllerStateMachine (
   // Define the current state
   reg [3:0] CurrentState, NextState;
 
-  always_ff @(posedge Clk, negedge Rst)
+  always_ff @(posedge Clk)
     if (Rst) CurrentState <= INIT;
     else CurrentState <= NextState;
 
   // Define the next state logic
-  always_comb
+  always_comb begin
+    PCClr = 1'b0;  // clear PC
+    PCUp  = 1'b0;  // increment PC
+    IRLd  = 1'b0;  // load instruction
     case (CurrentState)
       INIT: begin
         // INIT
@@ -127,6 +130,7 @@ module ControllerStateMachine (
       end
       default: NextState = INIT;  // go to init
     endcase
+  end
   // outputs
   assign CurrentStateOut = CurrentState;
   assign NextStateOut = NextState;
