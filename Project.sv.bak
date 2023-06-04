@@ -22,7 +22,6 @@ module Project (
     HEX6,
     HEX7
 );
-  input CLOCK_50;
   input [17:0] SW;
   input [3:0] KEY;
 
@@ -41,9 +40,9 @@ module Project (
 
   // ButtonSyncReg: BS
   ButtonSyncReg BS (
-   CLOCK_50,
-    KEY[0],
-   ButtonOut
+      .Clock(CLOCK_50),
+      .ButtonIn(KEY[0]),
+      .ButtonOut(ButtonOut)
   );
   // KeyFilter:Filter
   KeyFilter Filter (
@@ -54,7 +53,7 @@ module Project (
   );
   // Processor: Proc
   Processor Proc (
-      .Clk(FilterOut),
+      .Clk(CLOCK_50),
       .Reset(KEY[3]),
       .IR_Out(IR_Out),
       .PC_Out(PC_Out),
@@ -62,7 +61,7 @@ module Project (
       .NextState(NextStateOut),
       .ALU_A(ALU_A),
       .ALU_B(ALU_B),
-      .ALU_Out(ALU_Out)
+      .ALU_Out(ALU_Out),
   );
   // Mux8t1Nway: Mx
   Mux_Nw_8_to_1 #(
@@ -73,11 +72,11 @@ module Project (
       .B(ALU_A),
       .C(ALU_B),
       .D(ALU_Out),
-      .E({7'h0, NextStateOut}),
+      .E({NextStateOut, 7'h0}),
       .F(16'h0),
       .G(16'h0),
       .H(16'h0),
-      .M({M4, M5, M6, M7})
+      .M({M7, M4, M5, M6})
   );
 
   assign {M0, M1, M2, M3} = IR_Out[15:0];

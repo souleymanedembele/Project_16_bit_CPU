@@ -33,7 +33,7 @@ module Processor (
   wire [2:0] ALU_s0;
 
   Controller CU (
-      .Clk(Clk),
+      .clk(clk),
       .Rst(Reset),
       .IR_Out(IR_Out),
       .PC_Out(PC_Out),

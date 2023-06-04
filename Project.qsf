@@ -1118,7 +1118,10 @@ set_location_assignment PIN_V22 -to HSMC_TX_D_N[16]
 set_location_assignment PIN_T22 -to HSMC_RX_D_N[16]
 set_location_assignment PIN_V24 -to HSMC_CLKOUT_N2
 set_location_assignment PIN_G24 -to HSMC_CLKOUT_N1
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE Processor.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ButtonSyncReg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE KeyFilter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Mux_Nw_8_to_1.sv
 set_global_assignment -name MIF_FILE DataMemory.mif
 set_global_assignment -name MIF_FILE myROM.mif
 set_global_assignment -name QIP_FILE DataMemory.qip
@@ -1129,13 +1132,8 @@ set_global_assignment -name SYSTEMVERILOG_FILE ControllerStateMachine.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Datapath.sv
 set_global_assignment -name SYSTEMVERILOG_FILE PC.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Controller.sv
-set_global_assignment -name VERILOG_FILE DataMemory_syn.v
 set_global_assignment -name VERILOG_FILE DataMemory.v
-set_global_assignment -name VERILOG_FILE DataMemory_inst.v
-set_global_assignment -name VERILOG_FILE DataMemory_bb.v
-set_global_assignment -name VERILOG_FILE myROM_bb.v
 set_global_assignment -name VERILOG_FILE myROM.v
-set_global_assignment -name VERILOG_FILE myROM_inst.v
 set_global_assignment -name SYSTEMVERILOG_FILE Decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE testDataMemory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU.sv
@@ -1143,3 +1141,4 @@ set_global_assignment -name SYSTEMVERILOG_FILE Mux2to1.sv
 set_global_assignment -name SYSTEMVERILOG_FILE regFile16x16.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Project.sv
 set_global_assignment -name SOURCE_FILE db/Project.cmp.rdb
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
