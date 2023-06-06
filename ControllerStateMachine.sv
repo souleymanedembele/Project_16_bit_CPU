@@ -2,7 +2,7 @@
  * File              : ControllerStateMachine.sv
  * Author            : Souleymane Dembele <sdembele@uw.edu>
  * Date              : 05.27.2023
- * Last Modified Date: 06.05.2023
+ * Last Modified Date: 06.06.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -197,8 +197,9 @@ module ControllerStateMachine_tb;
     Rst = 1;
     instruction = 16'b0000000000000000;
     #20;
-    for (int i = 0; i < 65536; i = i + 1) begin  //  65536
-      instruction = i;
+    for (int i = 0; i < 200; i = i + 1) begin  //  65536
+      instruction[15:12] = $urandom_range(0, 16);
+      instruction[11:0]  = $urandom_range(0, 4096);
       #20;
     end
     $stop;

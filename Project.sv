@@ -2,10 +2,9 @@
  * File              : Project.sv
  * Author            : Souleymane Dembele <sdembele@uw.edu> and Jot
  * Date              : 06.01.2023
- * Last Modified Date: 06.01.2023
+ * Last Modified Date: 06.06.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
-
 
 module Project (
     KEY,
@@ -42,9 +41,9 @@ module Project (
 
   // ButtonSyncReg: BS
   ButtonSyncReg BS (
-   CLOCK_50,
-   ~KEY[2],
-   ButtonOut
+      CLOCK_50,
+      ~KEY[2],
+      ButtonOut
   );
   // KeyFilter:Filter
   KeyFilter Filter (
@@ -70,7 +69,7 @@ module Project (
       .N(16)
   ) Mux_Nw_8_to_1 (
       .S(SW[17:15]),
-      .A({1'h0, PC_Out, 4'h0,StateOut}),
+      .A({1'h0, PC_Out, 4'h0, StateOut}),
       .B(ALU_A),
       .C(ALU_B),
       .D(ALU_Out),
@@ -84,7 +83,7 @@ module Project (
   assign M5 = Mux8t1Nw_Out[7:4];
   assign M6 = Mux8t1Nw_Out[11:8];
   assign M7 = Mux8t1Nw_Out[15:12];
-  
+
   assign M0 = IR_Out[3:0];
   assign M1 = IR_Out[7:4];
   assign M2 = IR_Out[11:8];

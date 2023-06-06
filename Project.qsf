@@ -1118,6 +1118,7 @@ set_location_assignment PIN_V22 -to HSMC_TX_D_N[16]
 set_location_assignment PIN_T22 -to HSMC_RX_D_N[16]
 set_location_assignment PIN_V24 -to HSMC_CLKOUT_N2
 set_location_assignment PIN_G24 -to HSMC_CLKOUT_N1
+set_global_assignment -name SDC_FILE Project.out.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE Processor.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ButtonSyncReg.sv
 set_global_assignment -name SYSTEMVERILOG_FILE KeyFilter.sv
