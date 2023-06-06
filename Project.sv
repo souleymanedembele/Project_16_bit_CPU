@@ -32,17 +32,18 @@ module Project (
   output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
 
   assign LEDR = SW;
-  assign LEDG = KEY;
+  assign LEDG = ~KEY;
 
   wire [2:0] M0, M1, M2, M3, M4, M5, M6, M7;
   wire ButtonOut, FilterOut, Strobe;
   wire [15:0] ALU_A, ALU_B, ALU_Out, IR_Out, Mux8t1Nw_Out;
-  wire [7:0] NextStateOut, PC_Out, StateOut;
+  wire [6:0] PC_Out;
+  wire [3:0] StateOut, NextStateOut;
 
   // ButtonSyncReg: BS
   ButtonSyncReg BS (
    CLOCK_50,
-   KEY[2],
+   ~KEY[2],
    ButtonOut
   );
   // KeyFilter:Filter
@@ -55,7 +56,7 @@ module Project (
   // Processor: Proc
   Processor Proc (
       .Clk(FilterOut),
-      .Reset(KEY[1]),
+      .Reset(~KEY[1]),
       .IR_Out(IR_Out),
       .PC_Out(PC_Out),
       .State(StateOut),
@@ -68,12 +69,12 @@ module Project (
   Mux_Nw_8_to_1 #(
       .N(16)
   ) Mux_Nw_8_to_1 (
-      .S(SW[2:0]),
-      .A({PC_Out, State_Out}),
+      .S(SW[17:15]),
+      .A({1'h0, PC_Out, 4'h0,StateOut}),
       .B(ALU_A),
       .C(ALU_B),
       .D(ALU_Out),
-      .E({7'h0, NextStateOut}),
+      .E({12'h0, NextStateOut}),
       .F(16'h0),
       .G(16'h0),
       .H(16'h0),
