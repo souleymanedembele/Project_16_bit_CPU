@@ -34,7 +34,7 @@ module Project (
   assign LEDR = SW;
   assign LEDG = ~KEY;
 
-  wire [2:0] M0, M1, M2, M3, M4, M5, M6, M7;
+  wire [3:0] M0, M1, M2, M3, M4, M5, M6, M7;
   wire ButtonOut, FilterOut, Strobe;
   wire [15:0] ALU_A, ALU_B, ALU_Out, IR_Out, Mux8t1Nw_Out;
   wire [6:0] PC_Out;
