@@ -19,8 +19,17 @@ WIDTH=16;
 DEPTH=256;
 
 ADDRESS_RADIX=UNS;
-DATA_RADIX=UNS;
+DATA_RADIX=HEX;
 
 CONTENT BEGIN
-	[0..255]  :   0;
+	[0..26]  :   0000;
+	27   :   21BA;
+	[28..41]  :   0000;
+	42   :   A04E;
+	[43..59]  :   0000;
+	60   :   71AC;
+	[61..125]  :   0000;
+	126  :   B17F;
+	[127..254]  :   0000;
+	255  :   FFFF;
 END;

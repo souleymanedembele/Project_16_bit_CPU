@@ -2,7 +2,7 @@
  * File              : ControllerStateMachine.sv
  * Author            : Souleymane Dembele <sdembele@uw.edu>
  * Date              : 05.27.2023
- * Last Modified Date: 06.01.2023
+ * Last Modified Date: 06.05.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -58,7 +58,7 @@ module ControllerStateMachine (
   reg [3:0] CurrentState, NextState;
 
   always_ff @(posedge Clk)
-    if (Rst) CurrentState <= INIT;
+    if (!Rst) CurrentState <= INIT;
     else CurrentState <= NextState;
 
   // Define the next state logic
@@ -94,7 +94,7 @@ module ControllerStateMachine (
         instruction[15:12] == 4'b0011 ? ADD :  // ADD
         instruction[15:12] == 4'b0100 ? SUB :  // SUB
         instruction[15:12] == 4'b0101 ? HALT :  // halt
-        DECODE;  // decode
+        NOOP;  // no operation
       end
       NOOP: NextState = FETCH;  // go to fetch
       LOAD_A: begin  // load A
@@ -191,10 +191,10 @@ module ControllerStateMachine_tb;
 
 
   initial begin
-    Rst = 1;
+    Rst = 0;
     instruction = 16'b0000000000000000;
     #20;
-    Rst = 0;
+    Rst = 1;
     instruction = 16'b0000000000000000;
     #20;
     for (int i = 0; i < 65536; i = i + 1) begin  //  65536

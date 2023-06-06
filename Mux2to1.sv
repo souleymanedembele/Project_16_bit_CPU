@@ -12,7 +12,7 @@ module Mux2to1 (
 );
 
   input [15:0] ALUQ;
-  input [1:0] RFSelect;
+  input RFSelect;
   input [15:0] ReadData;
   output reg [15:0] WriteData;
 
@@ -27,7 +27,7 @@ endmodule
 module Mux2to1_tb;
 
   logic [15:0] ALUQ;
-  logic [ 1:0] RFSelect;
+  logic RFSelect;
   logic [15:0] ReadData;
   logic [15:0] WriteData;
 

@@ -36,13 +36,13 @@ module Project (
 
   wire [2:0] M0, M1, M2, M3, M4, M5, M6, M7;
   wire ButtonOut, FilterOut, Strobe;
-  wire [15:0] ALU_A, ALU_B, ALU_Out, IR_Out;
+  wire [15:0] ALU_A, ALU_B, ALU_Out, IR_Out, Mux8t1Nw_Out;
   wire [7:0] NextStateOut, PC_Out, StateOut;
 
   // ButtonSyncReg: BS
   ButtonSyncReg BS (
    CLOCK_50,
-    KEY[0],
+   KEY[2],
    ButtonOut
   );
   // KeyFilter:Filter
@@ -55,7 +55,7 @@ module Project (
   // Processor: Proc
   Processor Proc (
       .Clk(FilterOut),
-      .Reset(KEY[3]),
+      .Reset(KEY[1]),
       .IR_Out(IR_Out),
       .PC_Out(PC_Out),
       .State(StateOut),
@@ -77,10 +77,17 @@ module Project (
       .F(16'h0),
       .G(16'h0),
       .H(16'h0),
-      .M({M4, M5, M6, M7})
+      .M(Mux8t1Nw_Out)
   );
-
-  assign {M0, M1, M2, M3} = IR_Out[15:0];
+  assign M4 = Mux8t1Nw_Out[3:0];
+  assign M5 = Mux8t1Nw_Out[7:4];
+  assign M6 = Mux8t1Nw_Out[11:8];
+  assign M7 = Mux8t1Nw_Out[15:12];
+  
+  assign M0 = IR_Out[3:0];
+  assign M1 = IR_Out[7:4];
+  assign M2 = IR_Out[11:8];
+  assign M3 = IR_Out[15:12];
 
   Decoder Decoder0 (
       .C  (M0),

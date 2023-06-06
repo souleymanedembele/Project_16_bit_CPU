@@ -16,7 +16,7 @@ module Datapath (
     ALU_out
 );
   input Clock, RF_W_en, D_Wr;
-  input [1:0] RF_s;
+  input RF_s;
   input [2:0] ALU_s0;
   input [3:0] RF_Ra_Addr, RF_Rb_Addr, RF_W_Addr;
   input [7:0] D_Addr;
@@ -96,16 +96,16 @@ module Datapath_tb ();
 
   initial begin
     ALU_s0 = 3'h0;  // ALU selectbit to be 0
-    RF_s = 2'b00;  // RF selectbit to be 0
+    RF_s = 1'b0;  // RF selectbit to be 0
     RF_W_en = 1;  // RF write enable to be 1
     D_Wr = 1;  // Data memory write enable to be 1
     RF_W_Addr = 4'h1;  // RF write address to be 1
     RF_Ra_Addr = 4'h1;  // RF read address A to be 1
     RF_Rb_Addr = 4'h2;  // RF read address B to be 2
-    D_Addr = 8'h1;  // Data memory address to be 1
+    D_Addr = 8'h1B;  // Data memory address to be 1
     #20;  // wait for 20ns
     ALU_s0 = 3'h0;  // ALU selectbit to be 0
-    RF_s = 2'b01;  // RF selectbit to be 1
+    RF_s = 1'b1;  // RF selectbit to be 1
     RF_W_en = 1;
     D_Wr = 1;
     RF_W_Addr = 4'h1;
@@ -134,7 +134,7 @@ module Datapath_tb ();
   end
 
   initial begin
-    $monitor("ALU_inA = %b, ALU_inB = %b, ALU_out = %b, MUX_Q=%b, MUX_SELECT=%b, DataMemory=%b",
+    $monitor("ALU_inA = %h, ALU_inB = %h, ALU_out = %h, MUX_Q=%h, MUX_SELECT=%h, DataMemory=%h",
              ALU_inA, ALU_inB, ALU_out, DUT.MUX_Q, RF_s, DUT.DMem_Q);
   end
 endmodule
