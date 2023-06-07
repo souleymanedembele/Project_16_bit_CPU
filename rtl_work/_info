@@ -9,100 +9,102 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/mnt/hgfs/soul/Documents/University/Courses/Spring_23/CES_330/CourseProject/Project
-vALU
+vController
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1686037034
+Z2 !s110 1686102626
 !i10b 1
-!s100 230dgSVL1[=5^DgPP9=o=1
+!s100 SRTENH3Z6cgR7L<cAoI?13
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IJAz3`7g=aBM]nBG`eEGnf0
+I9dhibQ3g]dFoO8POQOz_k2
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-Z5 w1685061054
-Z6 8./ALU.sv
-Z7 F./ALU.sv
-!i122 9
-L0 7 25
+Z5 w1686102620
+Z6 8./Controller.sv
+Z7 F./Controller.sv
+!i122 4
+L0 9 68
 Z8 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1686037034.000000
-Z10 !s107 ./ALU.sv|
-Z11 !s90 -reportprogress|300|-work|work|+acc|./ALU.sv|
+Z9 !s108 1686102626.000000
+!s107 ./Controller.sv|
+Z10 !s90 -reportprogress|300|-work|work|+acc|+cover|./Controller.sv|
 !i113 1
-Z12 o-work work +acc
+Z11 !s102 +cover
+Z12 o-work work +acc +cover
 Z13 tCvgOpt 0
-n@a@l@u
-vALU_tb
+n@controller
+vController_tb
 R1
 R2
 !i10b 1
-!s100 ;ZVBn[T9BTzZJ4^DNOdh43
+!s100 ?ZFcn^f1mjJ`CIh;m>j4`0
 R3
-IA07_EOcK<FLCjikDC9liX1
+IUicZcAoZbkQQ3@U>R10aL2
 R4
 S1
 R0
 R5
 R6
 R7
-!i122 9
-L0 33 30
+!i122 4
+L0 80 45
 R8
 r1
 !s85 0
 31
 R9
+Z14 !s107 ./Controller.sv|
 R10
-R11
 !i113 1
+R11
 R12
 R13
-n@a@l@u_tb
-vController
+n@controller_tb
+vControllerStateMachine
 R1
-Z14 !s110 1686037033
+R2
 !i10b 1
-!s100 SRTENH3Z6cgR7L<cAoI?13
+!s100 ?L?HfG^clzzfaM>CaD7ef0
 R3
-I9dhibQ3g]dFoO8POQOz_k2
+IJ03HmWPoCGYE5i@lD94dA2
 R4
 S1
 R0
-Z15 w1685404950
-Z16 8./Controller.sv
-Z17 F./Controller.sv
-!i122 4
-L0 9 68
+Z15 w1686095372
+Z16 8./ControllerStateMachine.sv
+Z17 F./ControllerStateMachine.sv
+!i122 1
+L0 9 139
 R8
 r1
 !s85 0
 31
-Z18 !s108 1686037033.000000
-Z19 !s107 ./Controller.sv|
-Z20 !s90 -reportprogress|300|-work|work|+acc|+cover|./Controller.sv|
+Z18 !s108 1686102625.000000
+Z19 !s107 ./ControllerStateMachine.sv|
+Z20 !s90 -reportprogress|300|-work|work|+acc|+cover|./ControllerStateMachine.sv|
 !i113 1
-Z21 !s102 +cover
-Z22 o-work work +acc +cover
+R11
+R12
 R13
-n@controller
-vController_tb
+n@controller@state@machine
+vControllerStateMachine_tb
 R1
-R14
+R2
 !i10b 1
-!s100 7_[c0Qc?CFXfXmKbXg=K@0
+!s100 ]U2n3Vbn4`U_l4SSU7`F]0
 R3
-ISHAfU6ZX=JYgNc1MZCQ6;1
+I3=Md>ggDmAccTBe>ERHbZ1
 R4
 S1
 R0
 R15
 R16
 R17
-!i122 4
-L0 80 46
+!i122 1
+L0 149 66
 R8
 r1
 !s85 0
@@ -111,139 +113,13 @@ R18
 R19
 R20
 !i113 1
-R21
-R22
-R13
-n@controller_tb
-vControllerStateMachine
-R1
-Z23 !s110 1686095037
-!i10b 1
-!s100 ?L?HfG^clzzfaM>CaD7ef0
-R3
-IHJW=N`n<i;kR4;M]49d>V1
-R4
-S1
-R0
-Z24 w1686095031
-Z25 8./ControllerStateMachine.sv
-Z26 F./ControllerStateMachine.sv
-!i122 14
-L0 9 139
-R8
-r1
-!s85 0
-31
-Z27 !s108 1686095037.000000
-!s107 ./ControllerStateMachine.sv|
-Z28 !s90 -reportprogress|300|./ControllerStateMachine.sv|
-!i113 1
-R13
-n@controller@state@machine
-vControllerStateMachine_tb
-R1
-R23
-!i10b 1
-!s100 9SnVRKGaPdSFIDD2V6hj=2
-R3
-Im5ZJ[^ooQ2dQST85RaKoG0
-R4
-S1
-R0
-R24
-R25
-R26
-!i122 14
-L0 149 67
-R8
-r1
-!s85 0
-31
-R27
-Z29 !s107 ./ControllerStateMachine.sv|
-R28
-!i113 1
+R11
+R12
 R13
 n@controller@state@machine_tb
-vDataMemory
-R2
-!i10b 1
-!s100 QHDFNm[3lN8g<@K49lKG?1
-R3
-Id`J^9oXg;F=;KYd4=on6g0
-R4
-R0
-w1684694628
-8./DataMemory.v
-F./DataMemory.v
-!i122 8
-L0 40 66
-R8
-r1
-!s85 0
-31
-R9
-!s107 ./DataMemory.v|
-!s90 -reportprogress|300|-work|work|+acc|./DataMemory.v|
-!i113 1
-R12
-R13
-n@data@memory
-vDatapath
-R1
-R2
-!i10b 1
-!s100 _@lHE@Zdi1F7Z4cSaXI1_3
-R3
-Ig8Lfalj8aTn6jdSGAT>Lh1
-R4
-S1
-R0
-Z30 w1686029978
-Z31 8./Datapath.sv
-Z32 F./Datapath.sv
-!i122 7
-L0 4 60
-R8
-r1
-!s85 0
-31
-R9
-Z33 !s107 ./Datapath.sv|
-Z34 !s90 -reportprogress|300|-work|work|+acc|./Datapath.sv|
-!i113 1
-R12
-R13
-n@datapath
-vDatapath_tb
-R1
-R2
-!i10b 1
-!s100 h;=^?o8<dhm?SiklZ8?L61
-R3
-I`n2_9lYK`<EEOelH_B<mU3
-R4
-S1
-R0
-R30
-R31
-R32
-!i122 7
-L0 66 75
-R8
-r1
-!s85 0
-31
-R9
-R33
-R34
-!i113 1
-R12
-R13
-n@datapath_tb
 vIR
 R1
-R14
+R2
 !i10b 1
 !s100 XEb`Qi01RIg4d<b7`eKP00
 R3
@@ -251,26 +127,26 @@ I=`eUdT38:CGCfHD>g`XE>0
 R4
 S1
 R0
-Z35 w1685485389
-Z36 8./IR.sv
-Z37 F./IR.sv
+Z21 w1685485389
+Z22 8./IR.sv
+Z23 F./IR.sv
 !i122 2
 L0 9 16
 R8
 r1
 !s85 0
 31
-R18
-Z38 !s107 ./IR.sv|
-Z39 !s90 -reportprogress|300|-work|work|+acc|+cover|./IR.sv|
+R9
+Z24 !s107 ./IR.sv|
+Z25 !s90 -reportprogress|300|-work|work|+acc|+cover|./IR.sv|
 !i113 1
-R21
-R22
+R11
+R12
 R13
 n@i@r
 vIR_tb
 R1
-R14
+R2
 !i10b 1
 !s100 mcM6QOFgbF3Zn1MHJQ8aP1
 R3
@@ -278,77 +154,25 @@ IIFjfInmh^F4SM_BIj1lXY0
 R4
 S1
 R0
-R35
-R36
-R37
+R21
+R22
+R23
 !i122 2
 L0 26 35
 R8
 r1
 !s85 0
 31
-R18
-R38
-R39
+R9
+R24
+R25
 !i113 1
-R21
-R22
+R11
+R12
 R13
 n@i@r_tb
-vMux2to1
-R1
-R2
-!i10b 1
-!s100 2Jo4P?jDJZDQ^NAMH7e>D3
-R3
-I6aB_iG1kLQa=NSbK:Qmcf2
-R4
-S1
-R0
-Z40 w1686030136
-Z41 8./Mux2to1.sv
-Z42 F./Mux2to1.sv
-!i122 11
-L0 7 19
-R8
-r1
-!s85 0
-31
-R9
-Z43 !s107 ./Mux2to1.sv|
-Z44 !s90 -reportprogress|300|-work|work|+acc|./Mux2to1.sv|
-!i113 1
-R12
-R13
-n@mux2to1
-vMux2to1_tb
-R1
-R2
-!i10b 1
-!s100 [D3>oW8L[<e0>l90:`KfO0
-R3
-I>GgigRJD[SA2gh=Vh2:IQ3
-R4
-S1
-R0
-R40
-R41
-R42
-!i122 11
-L0 27 45
-R8
-r1
-!s85 0
-31
-R9
-R43
-R44
-!i113 1
-R12
-R13
-n@mux2to1_tb
 vmyROM
-R14
+!s110 1686102625
 !i10b 1
 !s100 Gm_TE:GDih`d=?n<@fBI[3
 R3
@@ -368,13 +192,13 @@ R18
 !s107 ./myROM.v|
 !s90 -reportprogress|300|-work|work|+acc|+cover|./myROM.v|
 !i113 1
-R21
-R22
+R11
+R12
 R13
 nmy@r@o@m
 vPC
 R1
-R14
+R2
 !i10b 1
 !s100 00hVE_THm8?fA[f]_]nIe2
 R3
@@ -382,26 +206,26 @@ I6>:oz3[k9bmEWP=UV`9Y23
 R4
 S1
 R0
-Z45 w1685485343
-Z46 8./PC.sv
-Z47 F./PC.sv
+Z26 w1685485343
+Z27 8./PC.sv
+Z28 F./PC.sv
 !i122 3
 L0 5 16
 R8
 r1
 !s85 0
 31
-R18
-Z48 !s107 ./PC.sv|
-Z49 !s90 -reportprogress|300|-work|work|+acc|+cover|./PC.sv|
+R9
+Z29 !s107 ./PC.sv|
+Z30 !s90 -reportprogress|300|-work|work|+acc|+cover|./PC.sv|
 !i113 1
-R21
-R22
+R11
+R12
 R13
 n@p@c
 vPC_tb
 R1
-R14
+R2
 !i10b 1
 !s100 hc;BJb1j@`U;DAY5MV8c>0
 R3
@@ -409,124 +233,20 @@ Ibk`_lRnWm6IZkYTzdV3R93
 R4
 S1
 R0
-R45
-R46
-R47
+R26
+R27
+R28
 !i122 3
 L0 22 45
 R8
 r1
 !s85 0
 31
-R18
-R48
-R49
+R9
+R29
+R30
 !i113 1
-R21
-R22
+R11
+R12
 R13
 n@p@c_tb
-vProcessor
-R1
-R2
-!i10b 1
-!s100 6Rj<MPWe9V:c_76dWbDlO3
-R3
-IR6OmMKbDOQRzjeeb:dQ@60
-R4
-S1
-R0
-w1686029996
-8./Processor.sv
-F./Processor.sv
-!i122 5
-L0 7 63
-R8
-r1
-!s85 0
-31
-R18
-!s107 ./Processor.sv|
-!s90 -reportprogress|300|-work|work|+acc|+cover|./Processor.sv|
-!i113 1
-R21
-R22
-R13
-n@processor
-vregFile16x16
-R1
-Z50 !s110 1686087573
-!i10b 1
-!s100 iZfT985GDTUon=D2ViZ>e3
-R3
-Ic5SY0o@B<L9AnPChHO?z>1
-R4
-S1
-R0
-Z51 w1684688365
-Z52 8./regFile16x16.sv
-Z53 F./regFile16x16.sv
-!i122 12
-L0 9 28
-R8
-r1
-!s85 0
-31
-Z54 !s108 1686087573.000000
-Z55 !s107 ./regFile16x16.sv|
-Z56 !s90 -reportprogress|300|./regFile16x16.sv|
-!i113 1
-R13
-nreg@file16x16
-vregFile16x16_tb
-R1
-R50
-!i10b 1
-!s100 1_c5g6WTMUT=gS:LgGcO82
-R3
-I0li^X]2=aCeHdoeT^4U_01
-R4
-S1
-R0
-R51
-R52
-R53
-!i122 12
-L0 39 51
-R8
-r1
-!s85 0
-31
-R54
-R55
-R56
-!i113 1
-R13
-nreg@file16x16_tb
-vtestProcessor
-R1
-R2
-!i10b 1
-!s100 ZElE>VOCb4eYQ6nD[eTc;0
-R3
-IgYS>UTH;mU:ea6igWRaX93
-R4
-S1
-R0
-w1686030727
-8./testProcessor.sv
-F./testProcessor.sv
-!i122 6
-L0 5 49
-R8
-r1
-!s85 0
-31
-R9
-!s107 ./testProcessor.sv|
-!s90 -reportprogress|300|-work|work|+acc|+cover|./testProcessor.sv|
-!i113 1
-R21
-R22
-R13
-ntest@processor

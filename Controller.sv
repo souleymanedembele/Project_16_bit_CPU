@@ -2,7 +2,7 @@
  * File              : Controller.sv
  * Author            : Souleymane and Jot
  * Date              : 05.28.2023
- * Last Modified Date: 05.29.2023
+ * Last Modified Date: 06.06.2023
  * Last Modified By  : Souleymane Dembele <sdembele@uw.edu>
  */
 
@@ -112,9 +112,8 @@ module Controller_tb;
   end
 
   initial begin
-    Rst = 1;
-    #20;
     Rst = 0;
+    #60 Rst = 1;
     #500;
     $stop;
   end
