@@ -4,6 +4,7 @@
 * Mux2to1
 */
 
+//This is a mux2to1. This module has two different outputs for write data depending on what bit you select
 module Mux2to1 (
     ALUQ,
     RFSelect,
@@ -24,6 +25,7 @@ module Mux2to1 (
 
 endmodule
 
+//This is the test bench for the mux 2 to 1
 module Mux2to1_tb;
 
   logic [15:0] ALUQ;
