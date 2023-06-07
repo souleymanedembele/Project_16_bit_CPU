@@ -4,6 +4,7 @@
 * ALU
 */
 
+//This module is the ALU and it used to do arithmetic operations
 module ALU (
     A,
     B,
@@ -30,6 +31,7 @@ module ALU (
 
 endmodule
 
+//This is the testbench for the ALU
 module ALU_tb ();
 
   logic [2:0] Sel;
