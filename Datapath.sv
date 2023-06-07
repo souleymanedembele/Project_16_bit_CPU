@@ -1,6 +1,8 @@
 // System Verilog program by Souleymane and Jot
 // on 05/21/2023
 
+
+//This is our module for the datapath. In this module we connect our 4 lower level modules to create the datapath.
 module Datapath (
     Clock,
     D_Addr,
