@@ -112,9 +112,6 @@ module Datapath_tb ();
     RF_Ra_Addr = 4'h1;
     RF_Rb_Addr = 4'h2;
     D_Addr = 8'h1;
-    // #20;
-    // RF_W_Addr = 4'h2;  // RF write address to be 2 now
-    // D_Addr = 8'h1;
     #20;
     ALU_s0 = 3'h7;  // ALU selectbit to be 0 meaning increment
     RF_s = 2'b00;  // RF selectbit to be 1 now read from data memory
