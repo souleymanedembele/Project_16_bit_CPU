@@ -4,6 +4,7 @@
 * Processor.sv
 */
 
+//This module is for the processor and it connects our control unit and datapath together.
 module Processor (
     Clk,
     Reset,
