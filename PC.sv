@@ -2,6 +2,8 @@
 * Jotkamal Jaswal
 * 5/25/23
 */
+
+//This module is the PC which is basically a simple counter
 module PC (
     Clk,
     Clr,
@@ -19,6 +21,7 @@ module PC (
 
 endmodule
 
+//This is the test bench for pc
 module PC_tb ();
 
   logic Clk, Clr, Up;
