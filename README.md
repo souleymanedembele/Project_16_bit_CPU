@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document outlines the development and integration of a 16-bit CPU. The project focuses on creating and integrating two main components: the control unit and the datapath. These units are merged to form a fully functional processor capable of executing a predefined set of instructions.
+The project focuses on creating and integrating two main components: the control unit and the datapath. These units are merged to form a fully functional processor capable of executing a predefined set of instructions.
 
 ## Design
 
