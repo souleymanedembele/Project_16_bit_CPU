@@ -1,4 +1,4 @@
-# Project_16_bit_CPU Documentation
+# Project_16_bit_CPU
 
 ## Introduction
 
