@@ -6,6 +6,18 @@ The project focuses on creating and integrating two main components: the control
 
 ## Design
 
+![Design](./assets/design.png)
+
+Figure 1: Represents the design of the 16-bit CPU.
+
+## Implementation
+
+The project is implemented using the following steps:
+
+![Implementation](./assets/implementation.png)
+
+Figure 2: Represents the implementation steps.
+
 ### Controller Unit
 
 The Controller unit includes:
@@ -34,3 +46,19 @@ Integrates the control unit and datapath with appropriate connections to ensure 
 - **Controller_tb**: Tests the Controller module for proper initialization and state management.
 - **Datapath_tb**: Assesses the datapath for correct ALU operations and data handling.
 - **testProcessor**: Ensures the entire processor unit functions as expected.
+
+## Project Build
+
+![Build](./assets/projectbuild.png)
+
+Firgure 3: Represents the project build process.
+
+## Project RTL View
+
+![RTL View](./assets/projectrtlview.png)
+
+Figure 4: Represents the project RTL view.
+
+## Conclusion
+
+The project successfully integrates the control unit and datapath to create a fully functional 16-bit CPU capable of executing a set of instructions. The processor is tested for performance and functionality, ensuring it meets the project requirements.
